@@ -1,0 +1,624 @@
+<!doctype html>
+
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+
+        <!-- Page Title Here -->
+        <title>TEDxPESITBSC</title>
+		
+        <!-- Page Description Here -->
+		<meta name="description" content="TEDxPESITBSC 18 March 2017">
+
+        <!-- Disable screen scaling-->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+        <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link href="https://pa.tedcdn.com/favicon.ico" rel="shortcut icon" />
+        
+        <!-- Initializer -->
+        <link rel="stylesheet" href="./css/normalize.css">        
+        
+        <!-- Web fonts and Web Icons -->
+        <link rel="stylesheet" href="./css/pageloader.css">
+        <link rel="stylesheet" href="./fonts/opensans/stylesheet.css">
+        <link rel="stylesheet" href="./fonts/asap/stylesheet.css">
+        <link rel="stylesheet" href="./css/ionicons.min.css">
+        
+        <!-- Vendor CSS style -->
+        <link rel="stylesheet" href="./css/foundation.min.css">
+        <link rel="stylesheet" href="./js/vendor/jquery.fullPage.css">
+        <link rel="stylesheet" href="./js/vegas/vegas.min.css">
+        
+		<!-- Main CSS files -->
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/main_responsive.css">
+        <link rel="stylesheet" href="./css/style-color1.css">
+        
+        <script src="./js/vendor/modernizr-2.7.1.min.js"></script>
+        <script async defer src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e4813104686cad8"></script>
+
+        <style>
+         body { background-color: #000; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; color: white; }
+      </style>
+    </head>
+    <body id="menu" class="alt-bg">
+        
+        
+        <!-- Page Loader -->
+        <div class="page-loader" id="page-loader">
+            <div><i class="ion ion-loading-d"></i><p>loading</p></div>
+        </div>
+       
+ 
+
+        <!-- BEGIN OF site header Menu -->
+		<!-- Add "material" class for a material design style -->
+
+		<header class="header-top">
+			
+            <div class="menu clearfix">
+                <a href="#about-us">theme</a>
+				<!-- Add other menu similar to "about" here -->
+                <a href="#contact">contact</a>
+            </div>
+		</header>
+        <!-- END OF site header Menu-->
+        
+        <!-- BEGIN OF Quick nav icons at left -->
+		<nav class="quick-link count-4 nav-left">
+			<div class="logo">
+				<a href="#home">
+					<img src="img/favicon.ico" alt="Logo Brand">
+				</a>
+			</div>
+			<ul id="qmenu" class="qmenu">
+				<li data-menuanchor="home">
+					<a href="#home" class=""><i class="icon ion ion-home"></i>
+					</a>
+					<span class="title">Home page</span>
+				</li>
+				<!--<li data-menuanchor="register">
+					<a href="#register"><i class="icon ion ion-compose"></i>
+					</a>
+					<span class="title">Stay in touch</span>
+				</li>-->
+
+				<li data-menuanchor="about-us">
+					<a href="#about-us"><i class="icon ion ion-android-information"></i>
+					</a>
+					<span class="title">Theme</span>
+				</li>
+				<!--<li data-menuanchor="contact">
+					<a href="#contact"><i class="icon ion ion-android-call"></i>
+					</a>
+					<span class="title">Contact</span>
+				</li>-->
+				<li data-menuanchor="contact">
+					<a href="#contact"><i class="icon ion ion-email"></i>
+					</a>
+					<span class="title">Contact</span>
+				</li>
+			</ul>
+		</nav>
+        <!-- END OF Quick nav icons at left -->
+        
+
+
+        <!-- BEGIN OF site cover -->
+        <div class="page-cover" id="s-cover" style="z-index: +1;">
+            <!--Cover Background 
+            <div class="cover-bg pos-abs full-size bg-img" data-image-src="img/bg-default.jpg"></div>
+			
+             BEGIN OF Slideshow Background -->
+            <!--<div class="cover-bg pos-abs full-size slide-show">
+				<i class='img' data-src='./img/bg-slide1.jpg'></i>
+				<i class='img' data-src='./img/bg-slide2.jpg'></i>
+				<i class='img' data-src='./img/bg-slide3.jpg'></i>
+				<i class='img' data-src='./img/bg-slide4.jpg'></i>
+			</div>-->
+            <!-- END OF Slideshow Background -->
+            
+            <!--BEGIN OF Static video bg  - uncomment below to use Video as Background-->
+            <!--<div id="container" class="video-container show-for-medium-up">
+                <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" muted="muted"
+                       width="640" height="360">
+                    <source src="vid/flower_loop.mp4" type="video/mp4">
+                </video>
+            </div>-->
+            <!--END OF Static video bg-->
+			
+			<!-- Solid color as background -->
+<!--            <div class="cover-bg pos-abs full-size bg-color" data-bgcolor="rgb(59, 59, 59)"></div>-->
+			
+			<!-- Solid color as filter -->
+            <!--<div class="cover-bg-mask pos-abs full-size bg-color" data-bgcolor="rgba(0, 0, 0, 0.41)"></div>
+            -->
+            <canvas id="c"></canvas>
+			<script>
+			// requestAnimFrame shim
+			window.requestAnimFrame = (function()
+			{
+			   return  window.requestAnimationFrame       || 
+			           window.webkitRequestAnimationFrame || 
+			           window.mozRequestAnimationFrame    || 
+			           window.oRequestAnimationFrame      || 
+			           window.msRequestAnimationFrame     || 
+			           function(callback)
+			           {
+			               window.setTimeout(callback);
+			           };
+			})();
+
+			// remove frame margin and scrollbars when maxing out size of canvas
+			document.body.style.margin = "0px";
+			document.body.style.overflow = "hidden";
+
+			// get dimensions of window and resize the canvas to fit
+			var width = window.innerWidth,
+			    height = window.innerHeight,
+			    canvas = document.getElementById("c"),
+			    mousex = width/2, mousey = height/2;
+			canvas.width = width;
+			canvas.height = height;
+
+			// get 2d graphics context and set global alpha
+			var G=canvas.getContext("2d");
+			G.globalAlpha=0.25;
+
+			// setup aliases
+			var Rnd = Math.random,
+			    Sin = Math.sin,
+			    Floor = Math.floor;
+
+			// constants and storage for objects that represent star positions
+			var warpZ = 12,
+			    units = 500,
+			    stars = [],
+			    cycle = 0,
+			    Z = 0.025 + (1/25 * 2);
+
+			// mouse events
+			function addCanvasEventListener(name, fn)
+			{
+			   canvas.addEventListener(name, fn, false);
+			}
+			addCanvasEventListener("mousemove", function(e) {
+			   mousex = e.clientX;
+			   mousey = e.clientY;
+			});
+
+			function wheel (e) {
+			   var delta = 0;
+			   if (e.detail)
+			   {
+			      delta = -e.detail / 3;
+			   }
+			   else
+			   {
+			      delta = e.wheelDelta / 120;
+			   }
+			   var doff = (delta/25);
+			   if (delta > 0 && Z+doff <= 0.5 || delta < 0 && Z+doff >= 0.01)
+			   {
+			      Z += (delta/25);
+			      //console.log(delta +" " +Z);
+			   }
+			}
+			addCanvasEventListener("DOMMouseScroll", wheel);
+			addCanvasEventListener("mousewheel", wheel);
+
+			// function to reset a star object
+			function resetstar(a)
+			{
+			   a.x = (Rnd() * width - (width * 0.5)) * warpZ;
+			   a.y = (Rnd() * height - (height * 0.5)) * warpZ;
+			   a.z = warpZ;
+			   a.px = 0;
+			   a.py = 0;
+			}
+
+			// initial star setup
+			for (var i=0, n; i<units; i++)
+			{
+			   n = {};
+			   resetstar(n);
+			   stars.push(n);
+			}
+
+			// star rendering anim function
+			var rf = function()
+			{
+			   // clear background
+			   G.fillStyle = "#000";
+			   G.fillRect(0, 0, width, height);
+			   
+			   // mouse position to head towards
+			   var cx = (mousex - width / 2) + (width / 2),
+			       cy = (mousey - height / 2) + (height / 2);
+			   
+			   // update all stars
+			   var sat = Floor(Z * 500);       // Z range 0.01 -> 0.5
+			   if (sat > 100) sat = 100;
+			   for (var i=0; i<units; i++)
+			   {
+			      var n = stars[i],            // the star
+			          xx = n.x / n.z,          // star position
+			          yy = n.y / n.z,
+			          e = (1.0 / n.z + 1) * 2;   // size i.e. z
+			      
+			      if (n.px !== 0)
+			      {
+			         // hsl colour from a sine wave
+			         G.strokeStyle = "hsl(" + ((cycle * i) % 360) + "," + sat + "%,80%)";
+			         G.lineWidth = e;
+			         G.beginPath();
+			         G.moveTo(xx + cx, yy + cy);
+			         G.lineTo(n.px + cx, n.py + cy);
+			         G.stroke();
+			      }
+			      
+			      // update star position values with new settings
+			      n.px = xx;
+			      n.py = yy;
+			      n.z -= Z;
+			      
+			      // reset when star is out of the view field
+			      if (n.z < Z || n.px > width || n.py > height)
+			      {
+			         // reset star
+			         resetstar(n);
+			      }
+			   }
+			   
+			   // colour cycle sinewave rotation
+			   cycle += 0.01;
+			   
+			   requestAnimFrame(rf);
+			};
+			requestAnimFrame(rf);
+			</script>
+
+            
+        </div>
+        <!--END OF site Cover -->
+		
+		<!-- Begin of timer pane -->
+		<div class="pane-when " id="s-when" style="z-index: +1;">
+			<div class="content">
+				<!-- Clock -->
+				<div class="clock clock-countdown">
+					<div class="site-config"
+						 data-date="03/18/2017 00:00:00" 
+						 data-date-timezone="+0">
+					</div>		
+
+					<div class="elem-center">
+						<div class="digit">
+							<span class="days">43</span>
+							<span class="txt">days</span>
+						</div>
+					</div>
+					<!-- Logo instead -->
+<!--
+					<div class="logo">
+						<a href="#">
+							<img src="img/logo_only.png">
+						</a>
+					</div>
+-->
+					
+					<div class="elem-bottom">
+						<div class="deco"></div>
+						
+<!--						<span class="days">12</span><span class="thin">D</span>-->
+						<span class="hours">18</span><span class="thin">H</span>
+						<span class="minutes">45</span><span class="thin">MN</span>
+						<span class="seconds">36</span><span class="thin">S</span>
+					</div>
+				</div> 
+				
+				
+				<!--<footer>
+					<p><strong>Coming Soon...</strong></p>
+				</footer>     -->
+				           
+			</div> 
+		</div>
+		<!-- End of timer pane -->
+        
+        <!-- BEGIN OF site main content content here -->
+        <main class="page-main" id="mainpage">             
+            
+			<!-- Begin of home page -->
+			<div class="section page-home page page-cent" id="s-home">
+				
+				<!-- Logo -->
+				<!--<div class="logo-container">
+					<img class="h-logo" src="img/logo_only.png" alt="Logo">
+				</div>-->
+				<!-- Content -->
+				<section class="content">
+					
+					<header class="header">
+						<div class="h-left">
+							<img src="img/logo.png" class="img img-responsive">
+						</div>
+						<div class="h-right">
+							<h3>18 March 2017</h3>
+							<h4 class="subhead">Where Parallels Intersect</h4>
+						</div>
+					</header>
+				</section>
+				
+				<!-- Scroll down button -->
+                <footer class="p-footer p-scrolldown" style="z-index: +1;">
+                    <a href="#about-us">
+                        <div class="arrow-d">
+							<div class="before">Scroll</div>
+							<div class="after">Down</div>
+							<div class="circle"><i class="ion ion-mouse"></i></div>
+						</div>
+                    </a>                        
+                </footer>
+			</div>
+			<!-- End of home page -->
+            
+           
+            
+            <!-- Begin of register page -->
+            <!--
+            <div class="section page-register page page-cent"  id="s-register">
+                <section class="content">
+                    <header class="p-title">
+                        <h3>Register <i class="ion ion-compose"></i></h3> 
+						<h4 class="subhead">Register to get our latest news</h4>
+                    </header>
+                    <div>
+                        <form id="mail-subscription" class="form magic send_email_form" method="get" action="ajaxserver/serverfile.php">
+                            <p class="invite">Please, write your email below to stay in touch with us :</p>
+							<div class="fields clearfix">
+								<div class="input">
+									<label for="reg-email">Email </label>
+									<input id="reg-email" class="email_f"  name="email" type="email" required placeholder="your@email.address" data-validation-type="email"></div>
+								<div class="buttons">
+									<button id="submit-email" class="button email_b" name="submit_email">Ok</button>
+								</div>
+							</div>
+                            
+                            <p class="email-ok invisible"><strong>Thank you</strong> for your subscription. We will inform you.</p>
+                        </form>
+                    </div>
+                </section>
+                <footer class="p-footer p-scrolldown">
+                    <a href="#about-us">
+                        <div class="arrow-d">
+							<div class="before">About</div>
+							<div class="after">Lorem</div>
+							<div class="circle"><i class="ion ion-mouse"></i></div>
+						</div>
+                    </a>                        
+                </footer>
+            </div>
+            -->
+            
+
+            <!-- End of register page -->
+            
+            <!-- Begin of about us page -->
+            <div class="section page-about page page-cent" id="s-about-us" style="z-index: +1;">
+                <section class="content">
+                    <header class="p-title">
+                        <h3>Where Parallels Intersect<i class="ion ion-android-information">
+                            </i>
+                        </h3>
+						<!--<h4 class="subhead">We <span class="bold">make</span> only <span class="bold">beautiful</span> things</h4>-->
+                    </header>
+                    <article class="text">
+                        <p>Elementary geometry teaches us that parallel lines never meet. In projective geometry they meet at infinity.
+							This fifth edition of TEDxPESITBSC is that infinity.
+							Ideas collected from diverse domains drive innovation; our theme Where Parallels Intersect brings these diverse ideas to a single platform. 
+							People with different narratives, perceptions, inspirations and journeys inspiring an equally different audience. 
+							
+						</p>
+                        <p>Our stage is where these differences meet.
+							Our stage is where they cross path.
+							Come experience the magic of how the Past, Present and Future can exist at once as parallel moments in time. </p>
+                    </article>
+                </section>
+                <footer class="p-footer p-scrolldown">
+                    <a href="#contact">
+                        <div class="arrow-d">
+							<div class="before"></div>
+							<!--<div class="after">Message</div>-->
+							<div class="after">Contact</div>
+							<div class="circle"><i class="ion ion-mouse"></i></div>
+						</div>
+                    </a>                        
+                </footer>
+            </div>
+            <!-- End of about us page -->
+                
+            <!-- Begin of Contact page   -->
+            <div class="section page-contact page page-cent  bg-color" data-bgcolor="rgba(95, 25, 208, 0.88)s" id="s-contact" style="z-index: +1;">
+				<!-- Begin of contact information -->
+				<div class="slide" id="s-information" data-anchor="information">
+					<section class="content">
+						<header class="p-title">
+							<h3>Contact<i class="ion ion-location">
+								</i>
+							</h3>
+							<ul class="buttons">
+								<li class="show-for-medium-up">
+									<a title="About" href="#about-us" ><i class="ion ion-android-information"></i></a>
+								</li>
+								<!--<li>
+									<a title="Contact" href="#contact/information"><i class="ion ion-location"></i></a>
+								</li>-->
+								<li>
+									<a title="Message" href="#contact/message"><i class="ion ion-email"></i></a>
+								</li>
+							</ul>
+						</header>
+						<!-- Begin Of Page SubSction -->
+						<div class="contact">
+							<div class="row">
+								<div class="medium-6 columns left">
+									<ul>
+										<li>
+											<h4>Email</h4>
+											<p><a href="mailto://contact@mail.com">tedxpesitbsc@gmail.com</a></p>
+										</li>
+										<li>
+											<h4>Address</h4>
+											<p>PESIT Bangalore South Campus
+											<br>Bangalore </p>
+											
+										</li>
+									</ul>
+								</div>
+								<div class="medium-6 columns social-links right">
+									<ul>
+
+										<!-- legal notice -->
+										<li class="show-for-medium-up">
+											<h4>Website</h4>
+											<p><a href="#">tedxpesitbsc.com</a></p>
+										</li>
+										<li  class="show-for-medium-up">
+											<h4>Find us on</h4>
+											<!-- Begin of Social links -->
+											<div class="socialnet">
+												<a href="facebook.com/tedxpesitbsc"><i class="ion ion-social-facebook"></i></a>
+												<a href="instagram.com/tedxpesitbsc"><i class="ion ion-social-instagram"></i></a><!--
+												<a href="#"><i class="ion ion-social-twitter"></i></a>
+												<a href="#"><i class="ion ion-social-pinterest"></i></a>
+												<a href="#"><i class="ion ion-social-tumblr"></i></a>
+												-->
+											</div>
+											<!-- End of Social links -->
+										</li>
+										<li>
+											<p><img src="img/logo.png" alt="Logo" class="logo"></p>
+									</ul>
+
+								</div>
+							</div>
+						</div>
+						<!-- End of page SubSection -->
+					</section>  
+				</div>
+				<!-- end of contact information -->
+				
+				<!-- begin of contact message --> 
+				<div class="slide" id="s-message" data-anchor="message" style="z-index: +1;">
+					<section class="content">
+						<header class="p-title">
+							<h3>Write to us<i class="ion ion-email">
+								</i>
+							</h3>
+							<ul class="buttons">
+								<li class="show-for-medium-up">
+									<a title="About" href="#about-us"><i class="ion ion-android-information"></i></a>
+								</li>
+								<li>
+									<a title="Contact" href="#contact/information"><i class="ion ion-location"></i></a>
+								</li>
+								<!--<li>
+									<a title="Message" href="#contact/message"><i class="ion ion-email"></i></a>
+								</li>-->
+							</ul>
+						</header>
+						<!-- Begin Of Page SubSction -->
+						
+						<div class="page-block c-right v-zoomIn">
+							<div class="wrapper">
+								<div>
+									<form class="message form send_message_form" method="get" action="ajaxserver/serverfile.php">
+										<div class="fields clearfix">
+											<div class="input">
+												<label for="mes-name">Name </label>
+												<input id="mes-name" name="name" type="text" placeholder="Your Name" required></div>
+											<div class="buttons">
+												<button id="submit-message" class="button email_b" name="submit_message">Ok</button>
+											</div>
+										</div>
+										<div class="fields clearfix">
+											<div class="input">
+												<label for="mes-email">Email </label>
+												<input id="mes-email" type="email" placeholder="Email Address" name="email" required>
+											</div>
+										</div>
+										<div class="fields clearfix no-border">
+											<label for="mes-text">Message </label>
+											<textarea id="mes-text" placeholder="Message ..." name="message" required></textarea>
+
+											<div>
+												<p class="message-ok invisible">Your message has been sent, thank you.</p>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+						<!-- End Of Page SubSction -->
+					</section>
+						
+				</div>
+				<!-- End of contact message -->
+            </div>
+            <!-- End of Contact page  -->   
+        
+        </main>
+
+        <!-- END OF site main content content here -->  
+		
+		<!-- Begin of site footer -->
+		<footer class="page-footer" style="z-index: +1;">
+			<div>
+				<a href="https://www.facebook.com/tedxpesitbsc" target="_blank"><i class="ion icon ion-social-facebook"></i></a>
+				<a href="http://www.instagram.com/tedxpesitbsc" target="_blank"><i class="ion icon ion-social-instagram"></i></a><!--
+				<a href="http://twitter.com/miradontsoa" target="_blank"><i class="ion icon ion-social-twitter"></i></a>-->
+			</div>
+		</footer>
+		<!-- End of site footer -->
+
+        
+<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+        
+        <!-- All Javascript plugins goes here -->
+<!--		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
+        <script src="./js/vendor/jquery-1.11.2.min.js"></script>
+		<!-- All vendor scripts -->
+        <script src="./js/vendor/all.js"></script>
+		
+		<!-- Detailed vendor scripts -->
+        <!--<script src="./js/vendor/jquery.fullPage.min.js"></script>
+        <script src="./js/vendor/jquery.slimscroll.min.js"></script>
+        <script src="./js/vendor/jquery.knob.min.js"></script>
+        <script src="./js/vegas/vegas.min.js"></script>
+        <script src="./js/jquery.maximage.js"></script>
+        <script src="./js/okvideo.min.js"></script>-->
+		
+		<!-- Downcount JS -->
+        <script src="./js/jquery.downCount.js"></script>
+		
+		<!-- Form script -->
+        <script src="./js/form_script.js"></script>
+        
+		<!-- Javascript main files -->
+        <script src="./js/main.js"></script>
+         
+
+        <!-- Google Analytics: Uncomment and change UA-XXXXX-X to be your site"s ID. -->
+        <!--<script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src="//www.google-analytics.com/analytics.js";
+            r.parentNode.insertBefore(e,r)}(window,document,"script","ga"));
+            ga("create","UA-XXXXX-X");ga("send","pageview");
+        </script>-->
+    </body>
+</html>
