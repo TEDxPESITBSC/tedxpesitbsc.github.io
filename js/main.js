@@ -89,6 +89,10 @@ var pageElem = $('.page');
 
 /* 3. Init all plugin on load */
 $(document).ready(function() {
+
+    $("#submit-message").click(function(){
+        $("#write-to-us").submit();
+    });
 	/* Init console to avoid error */
 	var method;
     var noop = function () {};
@@ -138,7 +142,7 @@ $(document).ready(function() {
 	/** Init fullpage.js */
     $('#mainpage').fullpage({
 		menu: '#qmenu',
-		anchors: ['home', 'about-us', 'contact'],
+		anchors: ['home', 'theme', 'contact'],
 //        verticalCentered: false,
 //        resize : false,
 //		responsive: 900,

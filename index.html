@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="./fonts/opensans/stylesheet.css">
         <link rel="stylesheet" href="./fonts/asap/stylesheet.css">
         <link rel="stylesheet" href="./css/ionicons.min.css">
+        <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         
         <!-- Vendor CSS style -->
         <link rel="stylesheet" href="./css/foundation.min.css">
@@ -48,7 +49,7 @@
         
         <!-- Page Loader -->
         <div class="page-loader" id="page-loader">
-            <div><i class="ion ion-loading-d"></i><p>loading</p></div>
+            <div><i class="ion ion-loading-a"></i><p>loading</p></div>
         </div>
        
  
@@ -59,7 +60,7 @@
 		<header class="header-top">
 			
             <div class="menu clearfix">
-                <a href="#about-us">theme</a>
+                <a href="#theme">theme</a>
 				<!-- Add other menu similar to "about" here -->
                 <a href="#contact">contact</a>
             </div>
@@ -85,8 +86,8 @@
 					<span class="title">Stay in touch</span>
 				</li>-->
 
-				<li data-menuanchor="about-us">
-					<a href="#about-us"><i class="icon ion ion-android-information"></i>
+				<li data-menuanchor="theme">
+					<a href="#theme"><i class="icon ion ion-android-color-palette"></i>
 					</a>
 					<span class="title">Theme</span>
 				</li>
@@ -407,19 +408,18 @@
             <!-- End of register page -->
             
             <!-- Begin of about us page -->
-            <div class="section page-about page page-cent" id="s-about-us" style="z-index: +1;">
+            <div class="section page-about page page-cent" id="s-theme" style="z-index: +1;">
                 <section class="content">
                     <header class="p-title">
-                        <h3>Where Parallels Intersect<i class="ion ion-android-information">
+                        <h3>Where Parallels Intersect<i class="ion ion-ios-infinite">
                             </i>
                         </h3>
 						<!--<h4 class="subhead">We <span class="bold">make</span> only <span class="bold">beautiful</span> things</h4>-->
                     </header>
                     <article class="text">
-                        <p>Elementary geometry teaches us that parallel lines never meet. In projective geometry they meet at infinity.
-							This fifth edition of TEDxPESITBSC is that infinity.
-							Ideas collected from diverse domains drive innovation; our theme Where Parallels Intersect brings these diverse ideas to a single platform. 
-							People with different narratives, perceptions, inspirations and journeys inspiring an equally different audience. 
+                        <p>Elementary geometry teaches us that parallel lines never meet. In projective geometry they meet at infinity. This fifth edition of TEDxPESITBSC is that infinity.</p>
+							<span id="hide-mobile">Ideas collected from diverse domains drive innovation; our theme Where Parallels Intersect brings these diverse ideas to a single platform. 
+							People with different narratives, perceptions, inspirations and journeys inspiring an equally different audience. </span>
 							
 						</p>
                         <p>Our stage is where these differences meet.
@@ -468,11 +468,12 @@
 									<ul>
 										<li>
 											<h4>Email</h4>
-											<p><a href="mailto://contact@mail.com">tedxpesitbsc@gmail.com</a></p>
+											<p><a href="mailto://tedxpesitbsc@gmail.com">tedxpesitbsc@gmail.com</a></p>
 										</li>
 										<li>
 											<h4>Address</h4>
 											<p>PESIT Bangalore South Campus
+											<br>Hosur Road, Near Electronic City
 											<br>Bangalore </p>
 											
 										</li>
@@ -484,14 +485,14 @@
 										<!-- legal notice -->
 										<li class="show-for-medium-up">
 											<h4>Website</h4>
-											<p><a href="#">tedxpesitbsc.com</a></p>
+											<p><a href="http://www.tedxpesitbsc.com/">tedxpesitbsc.com</a></p>
 										</li>
 										<li  class="show-for-medium-up">
 											<h4>Find us on</h4>
 											<!-- Begin of Social links -->
 											<div class="socialnet">
-												<a href="facebook.com/tedxpesitbsc"><i class="ion ion-social-facebook"></i></a>
-												<a href="instagram.com/tedxpesitbsc"><i class="ion ion-social-instagram"></i></a><!--
+												<a href="http://www.facebook.com/tedxpesitbsc"><i class="ion ion-social-facebook"></i></a>
+												<a href="http://www.instagram.com/tedxpesitbsc"><i class="ion ion-social-instagram"></i></a><!--
 												<a href="#"><i class="ion ion-social-twitter"></i></a>
 												<a href="#"><i class="ion ion-social-pinterest"></i></a>
 												<a href="#"><i class="ion ion-social-tumblr"></i></a>
@@ -535,19 +536,20 @@
 						<div class="page-block c-right v-zoomIn">
 							<div class="wrapper">
 								<div>
-									<form class="message form send_message_form" method="get" action="ajaxserver/serverfile.php">
+									<form class="message form send_message_form" id = "write-to-us"action="https://formspree.io/tedxpesitbsc@gmail.com" method="POST">
 										<div class="fields clearfix">
 											<div class="input">
 												<label for="mes-name">Name </label>
 												<input id="mes-name" name="name" type="text" placeholder="Your Name" required></div>
 											<div class="buttons">
 												<button id="submit-message" class="button email_b" name="submit_message">Ok</button>
+
 											</div>
 										</div>
 										<div class="fields clearfix">
 											<div class="input">
 												<label for="mes-email">Email </label>
-												<input id="mes-email" type="email" placeholder="Email Address" name="email" required>
+												<input id="mes-email" type="email" placeholder="Email Address" name="_replyto" required>
 											</div>
 										</div>
 										<div class="fields clearfix no-border">
@@ -605,7 +607,7 @@
         <script src="./js/jquery.downCount.js"></script>
 		
 		<!-- Form script -->
-        <script src="./js/form_script.js"></script>
+       <!-- <script src="./js/form_script.js"></script>-->
         
 		<!-- Javascript main files -->
         <script src="./js/main.js"></script>

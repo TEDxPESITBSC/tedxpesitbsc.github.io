@@ -1699,4 +1699,11 @@ strong,
 	top: -22px;
 	left: 0;
 }
+@media screen and (max-width: 600px) {
+  #hide-mobile {
+    visibility: hidden;
+    clear: both;
+    display: none;
+  }
+}
 
