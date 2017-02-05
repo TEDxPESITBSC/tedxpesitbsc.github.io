@@ -1032,8 +1032,10 @@ strong,
     display: block;
     margin-bottom: 0.5rem;
 }
-.page-cent .p-title h3{
-    text-transform: uppercase;   
+.upper-case{
+	text-transform: uppercase;
+}
+.page-cent .p-title h3{   
     font-size: 32px;
     padding-left: 0px;
     text-align: left;
@@ -1705,5 +1707,17 @@ strong,
     clear: both;
     display: none;
   }
+  .quick-link li:hover .title{
+		-webkit-transform: none;
+		transform: none;
+		display: none;
+		opacity: 0.3;
+		visibility: hidden;
+	}
 }
 
+.p-footer #tedx-lic : before{
+	text-align : right;
+	right:200px;
+
+}

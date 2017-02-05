@@ -142,7 +142,7 @@ $(document).ready(function() {
 	/** Init fullpage.js */
     $('#mainpage').fullpage({
 		menu: '#qmenu',
-		anchors: ['home', 'theme', 'contact'],
+		anchors: ['home', 'theme', 'tedx', 'contact'],
 //        verticalCentered: false,
 //        resize : false,
 //		responsive: 900,
