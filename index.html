@@ -29,8 +29,8 @@
         
         <!-- Vendor CSS style -->
         <link rel="stylesheet" href="./css/foundation.min.css">
-        <link rel="stylesheet" href="./js/vendor/jquery.fullPage.css">
-        <link rel="stylesheet" href="./js/vegas/vegas.min.css">
+        <link rel="stylesheet" href="./css/jquery.fullPage.css">
+        <link rel="stylesheet" href="./css/vegas.min.css">
         
 		<!-- Main CSS files -->
         <link rel="stylesheet" href="./css/main.css">
@@ -51,17 +51,13 @@
         <div class="page-loader" id="page-loader">
             <div><i class="ion ion-loading-a"></i><p>loading</p></div>
         </div>
-       
- 
 
-        <!-- BEGIN OF site header Menu -->
-		<!-- Add "material" class for a material design style -->
 
 		<header class="header-top">
 			
             <div class="menu clearfix">
                 <a href="#theme">theme</a>
-				<!-- Add other menu similar to "about" here -->
+				
 				<a href="#tedx">TEDx</a>
 
                 <a href="#contact">contact</a>
@@ -83,11 +79,6 @@
 					</a>
 					<span class="title">Home page</span>
 				</li>
-				<!--<li data-menuanchor="register">
-					<a href="#register"><i class="icon ion ion-compose"></i>
-					</a>
-					<span class="title">Stay in touch</span>
-				</li>-->
 
 				<li data-menuanchor="theme">
 					<a href="#theme"><i class="icon ion ion-android-color-palette"></i>
@@ -114,33 +105,7 @@
 
         <!-- BEGIN OF site cover -->
         <div class="page-cover" id="s-cover" style="z-index: +1;">
-            <!--Cover Background 
-            <div class="cover-bg pos-abs full-size bg-img" data-image-src="img/bg-default.jpg"></div>
-			
-             BEGIN OF Slideshow Background -->
-            <!--<div class="cover-bg pos-abs full-size slide-show">
-				<i class='img' data-src='./img/bg-slide1.jpg'></i>
-				<i class='img' data-src='./img/bg-slide2.jpg'></i>
-				<i class='img' data-src='./img/bg-slide3.jpg'></i>
-				<i class='img' data-src='./img/bg-slide4.jpg'></i>
-			</div>-->
-            <!-- END OF Slideshow Background -->
             
-            <!--BEGIN OF Static video bg  - uncomment below to use Video as Background-->
-            <!--<div id="container" class="video-container show-for-medium-up">
-                <video autoplay="autoplay" loop="loop" autobuffer="autobuffer" muted="muted"
-                       width="640" height="360">
-                    <source src="vid/flower_loop.mp4" type="video/mp4">
-                </video>
-            </div>-->
-            <!--END OF Static video bg-->
-			
-			<!-- Solid color as background -->
-<!--            <div class="cover-bg pos-abs full-size bg-color" data-bgcolor="rgb(59, 59, 59)"></div>-->
-			
-			<!-- Solid color as filter -->
-            <!--<div class="cover-bg-mask pos-abs full-size bg-color" data-bgcolor="rgba(0, 0, 0, 0.41)"></div>
-            -->
             <canvas id="c"></canvas>
 			<script>
 			// requestAnimFrame shim
@@ -306,14 +271,7 @@
 							<span class="txt">days</span>
 						</div>
 					</div>
-					<!-- Logo instead -->
-<!--
-					<div class="logo">
-						<a href="#">
-							<img src="img/logo_only.png">
-						</a>
-					</div>
--->
+
 					
 					<div class="elem-bottom">
 						<div class="deco"></div>
@@ -324,11 +282,6 @@
 						<span class="seconds">36</span><span class="thin">S</span>
 					</div>
 				</div> 
-				
-				
-				<!--<footer>
-					<p><strong>Coming Soon...</strong></p>
-				</footer>     -->
 				           
 			</div> 
 		</div>
@@ -339,11 +292,7 @@
             
 			<!-- Begin of home page -->
 			<div class="section page-home page page-cent" id="s-home">
-				
-				<!-- Logo -->
-				<!--<div class="logo-container">
-					<img class="h-logo" src="img/logo_only.png" alt="Logo">
-				</div>-->
+
 				<!-- Content -->
 				<section class="content">
 					
@@ -370,47 +319,7 @@
                 </footer>
 			</div>
 			<!-- End of home page -->
-            
-           
-            
-            <!-- Begin of register page -->
-            <!--
-            <div class="section page-register page page-cent"  id="s-register">
-                <section class="content">
-                    <header class="p-title">
-                        <h3>Register <i class="ion ion-compose"></i></h3> 
-						<h4 class="subhead">Register to get our latest news</h4>
-                    </header>
-                    <div>
-                        <form id="mail-subscription" class="form magic send_email_form" method="get" action="ajaxserver/serverfile.php">
-                            <p class="invite">Please, write your email below to stay in touch with us :</p>
-							<div class="fields clearfix">
-								<div class="input">
-									<label for="reg-email">Email </label>
-									<input id="reg-email" class="email_f"  name="email" type="email" required placeholder="your@email.address" data-validation-type="email"></div>
-								<div class="buttons">
-									<button id="submit-email" class="button email_b" name="submit_email">Ok</button>
-								</div>
-							</div>
-                            
-                            <p class="email-ok invisible"><strong>Thank you</strong> for your subscription. We will inform you.</p>
-                        </form>
-                    </div>
-                </section>
-                <footer class="p-footer p-scrolldown">
-                    <a href="#about-us">
-                        <div class="arrow-d">
-							<div class="before">About</div>
-							<div class="after">Lorem</div>
-							<div class="circle"><i class="ion ion-mouse"></i></div>
-						</div>
-                    </a>                        
-                </footer>
-            </div>
-            -->
-            
 
-            <!-- End of register page -->
             
             <!-- Begin of about us page -->
             <div class="section page-about page page-cent" id="s-theme" style="z-index: +1;">
@@ -615,47 +524,15 @@
 		<footer class="page-footer" style="z-index: +1;">
 			<div>
 				<a href="https://www.facebook.com/tedxpesitbsc" target="_blank"><i class="ion icon ion-social-facebook"></i></a>
-				<a href="http://www.instagram.com/tedxpesitbsc" target="_blank"><i class="ion icon ion-social-instagram"></i></a><!--
-				<a href="http://twitter.com/miradontsoa" target="_blank"><i class="ion icon ion-social-twitter"></i></a>-->
+				<a href="http://www.instagram.com/tedxpesitbsc" target="_blank"><i class="ion icon ion-social-instagram"></i></a>
 			</div>
 		</footer>
 		<!-- End of site footer -->
 
-        
-<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
-        
-        <!-- All Javascript plugins goes here -->
-<!--		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>-->
         <script src="./js/vendor/jquery-1.11.2.min.js"></script>
-		<!-- All vendor scripts -->
         <script src="./js/vendor/all.js"></script>
-		
-		<!-- Detailed vendor scripts -->
-        <!--<script src="./js/vendor/jquery.fullPage.min.js"></script>
-        <script src="./js/vendor/jquery.slimscroll.min.js"></script>
-        <script src="./js/vendor/jquery.knob.min.js"></script>
-        <script src="./js/vegas/vegas.min.js"></script>
-        <script src="./js/jquery.maximage.js"></script>
-        <script src="./js/okvideo.min.js"></script>-->
-		
-		<!-- Downcount JS -->
         <script src="./js/jquery.downCount.js"></script>
-		
-		<!-- Form script -->
-       <!-- <script src="./js/form_script.js"></script>-->
-        
-		<!-- Javascript main files -->
-        <script src="./js/main.js"></script>
-         
 
-        <!-- Google Analytics: Uncomment and change UA-XXXXX-X to be your site"s ID. -->
-        <!--<script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src="//www.google-analytics.com/analytics.js";
-            r.parentNode.insertBefore(e,r)}(window,document,"script","ga"));
-            ga("create","UA-XXXXX-X");ga("send","pageview");
-        </script>-->
+        <script src="./js/main.js"></script>
     </body>
 </html>
