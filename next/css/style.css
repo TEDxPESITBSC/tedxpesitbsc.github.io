@@ -129,7 +129,7 @@ font-weight: 900;
 	}
 /* Home Style */
 #tf-home{
-	background: url(../images/highway-2025863_1920.jpg);
+	background: url(../images/highway-2025863_1920-min.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -460,7 +460,7 @@ ol.type li a.active { font-weight: 700; }
 }
 /* Testimonials Section */
 #tf-testimonials{
-	background: url(../images/backImage2.jpg);
+	background: url(../images/pexels-photo-29343-min.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
