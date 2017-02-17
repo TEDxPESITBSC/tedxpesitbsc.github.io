@@ -14,14 +14,10 @@ h1, h2, h3, h4, h5, h6, p{
   font-family: 'Roboto', sans-serif !important;
 }
 
-h1{
-	text-transform: uppercase;
-}
 h1 strong{
 	font-weight: 900;
 }
 h2{
-	text-transform: uppercase;
 	line-height: 20px;
 	margin:  0;
 }
@@ -86,7 +82,7 @@ ul, ol{
 	height:80px;
 }
 #tf-menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
+	background-color: rgba(255, 255, 255, 0);
 	border-color: rgba(231, 231, 231, 0);
 }
 #tf-menu a.navbar-brand {
@@ -107,7 +103,7 @@ font-weight: 900;
 	border-bottom: 1px solid rgb(230, 43, 30);
 }
 .on {
-	background-color: #222222 !important;
+	background-color: #000 !important;
 	padding: 0 !important;
 }
 .navbar-default .navbar-nav > .active > a, 
@@ -216,7 +212,7 @@ ul.about-list li span{
 	padding: 80px 0;
 }
 .section-title.center{
-	padding: 30px 0;
+	padding: 20px 0;
 }
 .section-title h2,
 .section-title.center h2{
@@ -231,13 +227,17 @@ ul.about-list li span{
 	margin-top: 20px;
 }
 
-.section-title.center hr {
-	border-top: 4px solid rgba(252, 172, 69, 0.34);
+.section-title hr {
+	border-top: 4px solid rgba(252, 172, 69, 0.75);
 	width: 40px;
 	text-align: center;
 	margin-top: 10px;
 	position: relative;
 	left: 17%;
+}
+.no-pos p{
+	position: relative;
+	left: 0%;
 }
 #team{ margin: 0 auto}
 #team .item{
@@ -594,18 +594,21 @@ nav#footer p{
 .faq .panel-heading {
   cursor: pointer;
 }
-.faq .faq-toggle.collapsed::before {
-  font-family: 'Roboto', sans-serif;
+.faq .faq-toggle.collapsed:before {
+  /*font-family: 'Roboto', sans-serif;*/
+  font-family: "Ionicons";
   content: "\f2c7";
   -webkit-transition: 0.5s linear ease-out;
           transition: 0.5s linear ease-out;
   position: absolute;
   left: 15px;
 }
-.faq .faq-toggle::before {
+.faq .faq-toggle:before {
+	transition: 0.5s;
+	font-family: "Ionicons";
   position: absolute;
   left: 15px;
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
   content: "\f35f";
 }
 .faq .panel-group .panel + .panel {
@@ -732,7 +735,7 @@ nav#footer p{
   }
 
   .section-title {
-    margin: 0 0 30px;
+    margin: 0 0 10px;
   }
 
   figure {
