@@ -8,6 +8,7 @@ body, html{
 	-webkit-font-smoothing: antialiased !important;
 	color: #5a5a5a;
 	padding:0px !important;
+	overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, p{
@@ -80,6 +81,7 @@ ul, ol{
 	padding-bottom: 0px;
 	transition: all 0.8s;
 	height:80px;
+	width:100%;
 }
 #tf-menu.navbar-default {
 	background-color: rgba(255, 255, 255, 0);

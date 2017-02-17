@@ -5,6 +5,14 @@
 }
 
 @media (max-width: 603px){
+#tf-menu.navbar-default .navbar-nav > li > a {
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background-color: rgba(0,0,0,0.79) !important;
+    border: none;
+}
 #tf-menu.navbar-default {
 	background-color: rgba(0, 0, 0, 0.79);
 	}
