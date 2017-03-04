@@ -156,7 +156,7 @@ font-weight: 900;
 
 .content{
 	position: relative;
-	padding: 20% 0 0;
+	padding: 15% 0 0;
 }
 
 .color{
@@ -191,6 +191,61 @@ ul.about-list li{
 ul.about-list li span{ 
 	margin-right: 10px;
 }
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+  outline: none;
+}
+
+.btn {
+  border: 0;
+  border-radius: 0;
+  padding: 6px 28px;
+  text-transform: uppercase;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: -webkit-transform;
+          transition-property: transform;
+}
+.btn:hover {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.btn-ted {
+  color: #fff !important;
+  background-color: rgb(230, 43, 30) !important;
+  border: 1px solid #f00 !important;
+  border-radius: 0% !important;
+  padding: 10px 30px !important; 
+  -webkit-box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
+-moz-box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
+box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
+}
+.btn-ted:hover, .btn-ted:focus {
+  color: #fff !important;
+  background-color: rgb(230, 43, 30) !important;
+}
+
+.btn-black {
+  color: #fff;
+  background-color: #000;
+}
+.btn-black:hover, .btn-black:focus {
+  color: #fff;
+  background-color: #000;
+}
+
 
 /* Team Section */
 #tf-team{
