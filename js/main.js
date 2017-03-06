@@ -43,7 +43,9 @@ function main() {
         cursorcolor:"rgb(230, 43,30)",
         cursorwidth:"10px",
         cursorborderradius : "1px",
-        cursorborder: "1px solid rgb(230, 43, 30)"
+        cursorborder: "1px solid rgb(230, 43, 30)",
+        scrollspeed : 120,
+        mousescrollstep: 60
       });
 
   	  $("#team").owlCarousel({
