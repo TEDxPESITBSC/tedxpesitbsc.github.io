@@ -2,26 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,700);
 
-@font-face {
-font-family: Iosevka-thin;
-src: url(../fonts/Iosevka/ttf/iosevka-thin.ttf);
-}
-
-@font-face {
-font-family: Iosevka-bold;
-src: url(../fonts/Iosevka/ttf/iosevka-bold.ttf);
-}
-
-@font-face {
-font-family: Iosevka-thin;
-src: url(../fonts/Iosevka/ttf/iosevka-heavy.ttf);
-}
-
-@font-face {
-font-family: Iosevka-light;
-src: url(../fonts/Iosevka/ttf/iosevka-light.ttf);
-}
-
 body, html{
 	font-family: 'Roboto', sans-serif !important;
 	text-rendering: optimizeLegibility !important;
@@ -151,7 +131,7 @@ font-weight: 900;
 	}
 /* Home Style */
 #tf-home{
-	background: url(../images/home_bg.png);
+	background: url(../images/highway-2025863_1920-min.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -269,7 +249,7 @@ box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
 
 /* Team Section */
 #tf-team{
-	background: url(../images/low_res_poly_bg.png);
+	background: url(../images/backImage2.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -537,7 +517,7 @@ ol.type li a.active { font-weight: 700; }
 }
 /* Testimonials Section */
 #tf-testimonials{
-	background: url(../images/contact_bg.jpg);
+	background: url(../images/pexels-photo-29343-min.jpg);
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -993,45 +973,4 @@ box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.56);
 		display: block !important;
 		font-size: 15px;
 	}
-}
-
-
-
-.theme-font{
-	font-size : 58px !important;
-	font-family : Iosevka-light, sans-serif !important;
-	letter-spacing: 4px !important;
-}
-
-.theme-date{
-	font-family : "Roboto", sans-serif !important;
-	letter-spacing: 2px !important;
-	font-size : 24px !important;
-}
-.edition{
-	font-family: "Roboto", sans-serif !important;
-	letter-spacing: 1px !important;
-}
-
-.edition > .num{
-	color : #000 !important;
-}
-
-.text-iosevka-light{
-	font-family : Iosevka-light, sans-serif !important;	
-}
-.text-iosevka-bold{
-	font-family: Iosevka-bold, sans-serif !important;	
-}
-.text-iosevka-thin{
-	font-family: Iosevka-thin, sans-serif !important;	
-}
-
-.section-header{
-	letter-spacing: 3px !important;
-	font-size : 36px !important;
-}
-
-.ted-color-font{
-		color : rgb(230,43,30);
 }
