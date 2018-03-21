@@ -31,7 +31,26 @@
   
     </head>
 
-    <body id="body">
+    <body id="body" class="during-preloader">
+        <div class="preloader" style="">
+            <center>
+                <div style="margin-top : 250px; vertical-align: middle !important;">
+                    <div class="heart-rate">
+                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px"
+                            height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+                            <polyline fill="none" stroke="#e62b1e" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+                            />
+                        </svg>
+                        <div class="fade-in-hr"></div>
+                        <div class="fade-out-hr"></div>
+                    </div>
+                </div>
+            </center>
+        </div>
+
+        
+
+
 
         <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
           <div class="container">
@@ -53,7 +72,7 @@
                 <li><a href="#tf-home" class="page-scroll">Home</a></li>
                 <li><a href="#tf-about" class="page-scroll">About</a></li>
                 <li><a href="#tf-team" class="page-scroll">Theme</a></li>
-                <!-- <li><a href="#tf-works" class="page-scroll">Speakers</a></li> -->
+                <li><a href="#tf-works" class="page-scroll">Speakers</a></li>
                 <li><a href="#tf-services" class="page-scroll">FAQ</a></li>
                
                 <!-- <li><a href="#tf-works" class="page-scroll">Portfolio</a></li>
@@ -80,7 +99,9 @@
                     
                     <br>
 
+                    
                     <a href="#tf-about"  class="fa fa-angle-down page-scroll"></a>
+
                 </div>
                 <!-- <div style="position:absolute;top:80vh;" class="col-sm-12 text-center">
                     <a href="#tf-about"  class="fa fa-angle-down page-scroll"></a>
@@ -159,9 +180,46 @@
         </div>
     </div>
 
+
+    <div id="tf-works">
+        <div class="container-fluid">
+            <div class="section-title text-center center">
+                <h2 class="section-header">SPEAKERS
+                    <strong class="ted-color-font"></strong>
+                </h2>
+                <!-- <div class="line">
+                    <hr>
+                </div> -->
+                <div class="clearfix"></div>
+            </div>
+            <div class="row container-fluid">
+                <div class="col-sm-4 col-sm-offset-1 col-xs-12 speaker-container wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
+                    <div class="product-front col-sm-12 container" style="padding:0px;">
+                        <div class="col-sm-12 image-container">
+                            <img src="images/speakers/preview.jpg" class="img img-responsive" alt="" />
+    
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="view-details">
+                            <a href="#maitri-popup" class="open-popup-link">View details</a>
+                        </div>
+                        <div class="stats col-sm-12">
+                            <div class="stats-container text-center">
+                                <span class="product-name">Maitri Gopalakrishna</span>
+                                <p>Drama Therapist</p>
+                                <a href="#maitri-popup" class="open-popup-link read-more" style="display:none;">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- Services Section
     ==========================================-->
-    <div id="tf-services">
+    <div id="tf-services" style="margin-top:150px; margin-bottom:100px;">
     <div id="faq" class="section faq">
         <div class="container">
             <div class="section-title center text-center">
@@ -380,14 +438,14 @@
     </footer>
 
     <!-- Popups -->
-    <!-- <div id="my-popup" class="mfp-hide white-popup text-center">
-        <img src="<img url>" class="img-responsive"> 
+    <div id="maitri-popup" class="mfp-hide white-popup text-center">
+        <img src="images/speakers/preview.jpg" class="img-responsive"> 
         <div style="padding: 20px;">
-            <h3>Name</h3>
-            <h4>Description</h4>
-            <p> Long Desc </p>
+            <h3>Maitri Gopalakrishna</h3>
+            <!-- <h4>Description</h4> -->
+            <p>A headstrong woman who works towards empowering people with the ability to rewrite traumatic experiences through the medium of Drama Therapy. As she puts it - “It sits in the intersection of theater; mental health and psychology; social change and social criticism.” The Rasa Theory (The Rasa Roudram is a codified form of expression with its unique breath patterns and physical structures) is a powerful tool she uses to bridge the gap between the person and his story.</p>
         </div>
-    </div> -->
+    </div>
 
 
     </body>
@@ -402,6 +460,14 @@
 
     <!-- Javascripts
     ================================================== -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("body").removeClass("during-preloader");
+            $(".preloader").hide(100);       
+        });
+    </script>
+
 
       <script>
     $(document).ready(function(){

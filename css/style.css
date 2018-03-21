@@ -22,6 +22,7 @@ font-family: Iosevka-light;
 src: url(../fonts/Iosevka/ttf/iosevka-light.ttf);
 }
 
+
 body, html{
 	font-family: 'Roboto', sans-serif !important;
 	text-rendering: optimizeLegibility !important;
@@ -921,7 +922,7 @@ box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.56);
 
 .stats-container{
 	padding: 10px;
-	min-height: 150px;
+	min-height: 120px;
 }
 .stats-container span{
 	font-size: 25px;
@@ -1033,5 +1034,90 @@ box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.56);
 }
 
 .ted-color-font{
-		color : rgb(230,43,30);
+		color : rgb(230, 43, 30);
+}
+
+
+
+
+
+body{
+	overflow-x: hidden !important;	
+}
+/*Preloader Heart Rate*/
+.during-preloader {
+	height: 100vh !important;
+  overflow-y: hidden !important;
+}
+
+
+.heart-rate {
+  width: 150px;
+  height: 73px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.fade-in-hr{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  top: 0;
+  right: 0;
+  animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out-hr{
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  animation: heartRateOut 2.5s linear infinite;
+  background: rgba(255, 255, 255, 1);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes heartRateIn {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes heartRateOut {
+  0% {
+    left: -120%;
+  }
+  30% {
+    left: -120%;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+.scrollY{
+
+	overflow-y: scroll;
+}
+.preloader{
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 9999 !important;
+    background: #fff;
 }
