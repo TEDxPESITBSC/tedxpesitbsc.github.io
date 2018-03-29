@@ -249,9 +249,6 @@ ul.about-list li span{
   border: 1px solid #f00 !important;
   border-radius: 0% !important;
   padding: 10px 30px !important; 
-  -webkit-box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
--moz-box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
-box-shadow: 2px -2px 21px 4px rgba(13,12,12,1) !important;
 }
 .btn-ted:hover, .btn-ted:focus {
   color: #fff !important;
@@ -1008,7 +1005,7 @@ box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.56);
 
 .theme-font{
 	font-size : 58px ;
-	font-family : Iosevka-bold, sans-serif !important;
+	font-family : Iosevka-light, sans-serif !important;
 	letter-spacing: 4px !important;
 }
 
